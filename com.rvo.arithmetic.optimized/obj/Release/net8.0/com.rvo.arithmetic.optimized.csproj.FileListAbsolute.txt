@@ -1,0 +1,11 @@
+/Users/quanchao/RVO/com.rvo.arithmetic.optimized/bin/Release/net8.0/com.rvo.arithmetic.optimized.deps.json
+/Users/quanchao/RVO/com.rvo.arithmetic.optimized/bin/Release/net8.0/com.rvo.arithmetic.optimized.dll
+/Users/quanchao/RVO/com.rvo.arithmetic.optimized/bin/Release/net8.0/com.rvo.arithmetic.optimized.pdb
+/Users/quanchao/RVO/com.rvo.arithmetic.optimized/obj/Release/net8.0/com.rvo.arithmetic.optimized.GeneratedMSBuildEditorConfig.editorconfig
+/Users/quanchao/RVO/com.rvo.arithmetic.optimized/obj/Release/net8.0/com.rvo.arithmetic.optimized.AssemblyInfoInputs.cache
+/Users/quanchao/RVO/com.rvo.arithmetic.optimized/obj/Release/net8.0/com.rvo.arithmetic.optimized.AssemblyInfo.cs
+/Users/quanchao/RVO/com.rvo.arithmetic.optimized/obj/Release/net8.0/com.rvo.arithmetic.optimized.csproj.CoreCompileInputs.cache
+/Users/quanchao/RVO/com.rvo.arithmetic.optimized/obj/Release/net8.0/com.rvo.arithmetic.optimized.dll
+/Users/quanchao/RVO/com.rvo.arithmetic.optimized/obj/Release/net8.0/refint/com.rvo.arithmetic.optimized.dll
+/Users/quanchao/RVO/com.rvo.arithmetic.optimized/obj/Release/net8.0/com.rvo.arithmetic.optimized.pdb
+/Users/quanchao/RVO/com.rvo.arithmetic.optimized/obj/Release/net8.0/ref/com.rvo.arithmetic.optimized.dll

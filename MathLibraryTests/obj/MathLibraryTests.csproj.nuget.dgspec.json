@@ -1,0 +1,200 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/quanchao/RVO/MathLibraryTests/MathLibraryTests.csproj": {}
+  },
+  "projects": {
+    "/Users/quanchao/RVO/com.rvo.arithmetic.optimized/com.rvo.arithmetic.optimized.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/quanchao/RVO/com.rvo.arithmetic.optimized/com.rvo.arithmetic.optimized.csproj",
+        "projectName": "com.rvo.arithmetic.optimized",
+        "projectPath": "/Users/quanchao/RVO/com.rvo.arithmetic.optimized/com.rvo.arithmetic.optimized.csproj",
+        "packagesPath": "/Users/quanchao/.nuget/packages/",
+        "outputPath": "/Users/quanchao/RVO/com.rvo.arithmetic.optimized/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/quanchao/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/quanchao/RVO/com.rvo.arithmetic/com.rvo.arithmetic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/quanchao/RVO/com.rvo.arithmetic/com.rvo.arithmetic.csproj",
+        "projectName": "com.rvo.arithmetic",
+        "projectPath": "/Users/quanchao/RVO/com.rvo.arithmetic/com.rvo.arithmetic.csproj",
+        "packagesPath": "/Users/quanchao/.nuget/packages/",
+        "outputPath": "/Users/quanchao/RVO/com.rvo.arithmetic/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/quanchao/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/quanchao/RVO/MathLibraryTests/MathLibraryTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/quanchao/RVO/MathLibraryTests/MathLibraryTests.csproj",
+        "projectName": "MathLibraryTests",
+        "projectPath": "/Users/quanchao/RVO/MathLibraryTests/MathLibraryTests.csproj",
+        "packagesPath": "/Users/quanchao/.nuget/packages/",
+        "outputPath": "/Users/quanchao/RVO/MathLibraryTests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/quanchao/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/quanchao/RVO/com.rvo.arithmetic.optimized/com.rvo.arithmetic.optimized.csproj": {
+                "projectPath": "/Users/quanchao/RVO/com.rvo.arithmetic.optimized/com.rvo.arithmetic.optimized.csproj"
+              },
+              "/Users/quanchao/RVO/com.rvo.arithmetic/com.rvo.arithmetic.csproj": {
+                "projectPath": "/Users/quanchao/RVO/com.rvo.arithmetic/com.rvo.arithmetic.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BenchmarkDotNet": {
+              "target": "Package",
+              "version": "[0.14.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.6.0, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

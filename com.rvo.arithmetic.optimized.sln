@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.rvo.arithmetic.optimized", "com.rvo.arithmetic.optimized\com.rvo.arithmetic.optimized.csproj", "{3ECD409D-7574-4D27-AF29-2E2F464193E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.rvo.arithmetic", "com.rvo.arithmetic\com.rvo.arithmetic.csproj", "{F4959F4B-5A43-484A-A832-7E2DF386BCF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathLibraryTests", "MathLibraryTests\MathLibraryTests.csproj", "{C0708D64-2AF0-4C3A-B2AC-C1E76A24EDF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB901723-12CB-407D-8C74-65CAAB334C61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB901723-12CB-407D-8C74-65CAAB334C61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB901723-12CB-407D-8C74-65CAAB334C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB901723-12CB-407D-8C74-65CAAB334C61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ECD409D-7574-4D27-AF29-2E2F464193E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ECD409D-7574-4D27-AF29-2E2F464193E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ECD409D-7574-4D27-AF29-2E2F464193E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ECD409D-7574-4D27-AF29-2E2F464193E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4959F4B-5A43-484A-A832-7E2DF386BCF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4959F4B-5A43-484A-A832-7E2DF386BCF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4959F4B-5A43-484A-A832-7E2DF386BCF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4959F4B-5A43-484A-A832-7E2DF386BCF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0708D64-2AF0-4C3A-B2AC-C1E76A24EDF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0708D64-2AF0-4C3A-B2AC-C1E76A24EDF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0708D64-2AF0-4C3A-B2AC-C1E76A24EDF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0708D64-2AF0-4C3A-B2AC-C1E76A24EDF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

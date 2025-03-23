@@ -1,0 +1,11 @@
+/Users/quanchao/RVO/com.rvo.arithmetic/obj/Debug/net8.0/com.rvo.arithmetic.GeneratedMSBuildEditorConfig.editorconfig
+/Users/quanchao/RVO/com.rvo.arithmetic/obj/Debug/net8.0/com.rvo.arithmetic.AssemblyInfoInputs.cache
+/Users/quanchao/RVO/com.rvo.arithmetic/obj/Debug/net8.0/com.rvo.arithmetic.AssemblyInfo.cs
+/Users/quanchao/RVO/com.rvo.arithmetic/obj/Debug/net8.0/com.rvo.arithmetic.csproj.CoreCompileInputs.cache
+/Users/quanchao/RVO/com.rvo.arithmetic/bin/Debug/net8.0/com.rvo.arithmetic.deps.json
+/Users/quanchao/RVO/com.rvo.arithmetic/bin/Debug/net8.0/com.rvo.arithmetic.dll
+/Users/quanchao/RVO/com.rvo.arithmetic/bin/Debug/net8.0/com.rvo.arithmetic.pdb
+/Users/quanchao/RVO/com.rvo.arithmetic/obj/Debug/net8.0/com.rvo.arithmetic.dll
+/Users/quanchao/RVO/com.rvo.arithmetic/obj/Debug/net8.0/refint/com.rvo.arithmetic.dll
+/Users/quanchao/RVO/com.rvo.arithmetic/obj/Debug/net8.0/com.rvo.arithmetic.pdb
+/Users/quanchao/RVO/com.rvo.arithmetic/obj/Debug/net8.0/ref/com.rvo.arithmetic.dll

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "com.rvo.arithmetic.optimized/1.0.0": {
+        "runtime": {
+          "com.rvo.arithmetic.optimized.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "com.rvo.arithmetic.optimized/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
