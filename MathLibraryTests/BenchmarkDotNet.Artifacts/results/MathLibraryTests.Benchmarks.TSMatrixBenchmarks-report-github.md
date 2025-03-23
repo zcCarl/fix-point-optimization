@@ -10,18 +10,18 @@ Apple M1 Max, 1 CPU, 10 logical and 10 physical cores
 ```
 | Method                                 | Mean       | Error     | StdDev    | Ratio | RatioSD | Allocated | Alloc Ratio |
 |--------------------------------------- |-----------:|----------:|----------:|------:|--------:|----------:|------------:|
-| VectorTransform_SystemMatrix           |   1.571 μs | 0.0075 μs | 0.0059 μs |  0.23 |    0.00 |         - |          NA |
-| Determinant_SystemMatrix               |   3.978 μs | 0.0147 μs | 0.0131 μs |  0.57 |    0.00 |         - |          NA |
-| Transpose_SystemMatrix                 |   6.905 μs | 0.0227 μs | 0.0177 μs |  1.00 |    0.00 |         - |          NA |
-| MatrixMultiplication_SystemMatrix      |   6.939 μs | 0.0106 μs | 0.0089 μs |  1.00 |    0.00 |         - |          NA |
-| VectorTransform_OptimizedTSMatrix      |   9.959 μs | 0.0351 μs | 0.0329 μs |  1.44 |    0.00 |         - |          NA |
-| VectorTransform_OriginalTSMatrix       |  15.145 μs | 0.0591 μs | 0.0523 μs |  2.18 |    0.01 |         - |          NA |
-| Determinant_OptimizedTSMatrix          |  15.403 μs | 0.0506 μs | 0.0448 μs |  2.22 |    0.01 |         - |          NA |
-| Determinant_OriginalTSMatrix           |  15.532 μs | 0.0273 μs | 0.0242 μs |  2.24 |    0.00 |         - |          NA |
-| Inverse_SystemMatrix                   |  20.378 μs | 0.0585 μs | 0.0488 μs |  2.94 |    0.01 |         - |          NA |
-| MatrixMultiplication_OptimizedTSMatrix |  41.297 μs | 0.0705 μs | 0.0660 μs |  5.95 |    0.01 |         - |          NA |
-| MatrixMultiplication_OriginalTSMatrix  |  41.329 μs | 0.0904 μs | 0.0845 μs |  5.96 |    0.01 |         - |          NA |
-| Transpose_OriginalTSMatrix             |  45.216 μs | 0.1276 μs | 0.1193 μs |  6.52 |    0.02 |         - |          NA |
-| Transpose_OptimizedTSMatrix            |  45.235 μs | 0.1429 μs | 0.1267 μs |  6.52 |    0.02 |         - |          NA |
-| Inverse_OptimizedTSMatrix              | 114.462 μs | 0.3652 μs | 0.3237 μs | 16.50 |    0.05 |         - |          NA |
-| Inverse_OriginalTSMatrix               | 328.702 μs | 1.3705 μs | 1.2149 μs | 47.37 |    0.18 |         - |          NA |
+| VectorTransform_SystemMatrix           |   1.600 μs | 0.0123 μs | 0.0109 μs |  0.22 |    0.01 |         - |          NA |
+| Determinant_SystemMatrix               |   4.057 μs | 0.0337 μs | 0.0281 μs |  0.56 |    0.01 |         - |          NA |
+| Transpose_SystemMatrix                 |   7.041 μs | 0.0076 μs | 0.0067 μs |  0.98 |    0.02 |         - |          NA |
+| MatrixMultiplication_SystemMatrix      |   7.216 μs | 0.1375 μs | 0.1689 μs |  1.00 |    0.03 |         - |          NA |
+| VectorTransform_OptimizedTSMatrix      |  10.167 μs | 0.0717 μs | 0.0599 μs |  1.41 |    0.03 |         - |          NA |
+| VectorTransform_OriginalTSMatrix       |  15.453 μs | 0.0899 μs | 0.0841 μs |  2.14 |    0.05 |         - |          NA |
+| Determinant_OptimizedTSMatrix          |  15.747 μs | 0.1213 μs | 0.1075 μs |  2.18 |    0.05 |         - |          NA |
+| Determinant_OriginalTSMatrix           |  15.817 μs | 0.1030 μs | 0.0964 μs |  2.19 |    0.05 |         - |          NA |
+| Inverse_SystemMatrix                   |  20.727 μs | 0.0692 μs | 0.0614 μs |  2.87 |    0.06 |         - |          NA |
+| MatrixMultiplication_OriginalTSMatrix  |  42.136 μs | 0.2285 μs | 0.2138 μs |  5.84 |    0.13 |         - |          NA |
+| Transpose_OptimizedTSMatrix            |  43.231 μs | 0.1788 μs | 0.1585 μs |  5.99 |    0.13 |         - |          NA |
+| MatrixMultiplication_OptimizedTSMatrix |  44.449 μs | 0.1162 μs | 0.1087 μs |  6.16 |    0.14 |         - |          NA |
+| Transpose_OriginalTSMatrix             |  46.140 μs | 0.0711 μs | 0.0665 μs |  6.40 |    0.14 |         - |          NA |
+| Inverse_OptimizedTSMatrix              | 116.130 μs | 0.6280 μs | 0.5874 μs | 16.10 |    0.37 |         - |          NA |
+| Inverse_OriginalTSMatrix               | 337.225 μs | 1.9638 μs | 1.7409 μs | 46.76 |    1.06 |         - |          NA |

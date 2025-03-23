@@ -265,27 +265,24 @@ namespace RVO.Arithmetic.Optimized
         /// <param name="matrix1">The first matrix.</param>
         /// <param name="matrix2">The second matrix.</param>
         /// <param name="result">The product of both matrices.</param>
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         public static void Multiply(ref TSMatrix matrix1, ref TSMatrix matrix2, out TSMatrix result)
         {
-            FP num0 = matrix1.M11 * matrix2.M11 + matrix1.M12 * matrix2.M21 + matrix1.M13 * matrix2.M31;
-            FP num1 = matrix1.M11 * matrix2.M12 + matrix1.M12 * matrix2.M22 + matrix1.M13 * matrix2.M32;
-            FP num2 = matrix1.M11 * matrix2.M13 + matrix1.M12 * matrix2.M23 + matrix1.M13 * matrix2.M33;
-            FP num3 = matrix1.M21 * matrix2.M11 + matrix1.M22 * matrix2.M21 + matrix1.M23 * matrix2.M31;
-            FP num4 = matrix1.M21 * matrix2.M12 + matrix1.M22 * matrix2.M22 + matrix1.M23 * matrix2.M32;
-            FP num5 = matrix1.M21 * matrix2.M13 + matrix1.M22 * matrix2.M23 + matrix1.M23 * matrix2.M33;
-            FP num6 = matrix1.M31 * matrix2.M11 + matrix1.M32 * matrix2.M21 + matrix1.M33 * matrix2.M31;
-            FP num7 = matrix1.M31 * matrix2.M12 + matrix1.M32 * matrix2.M22 + matrix1.M33 * matrix2.M32;
-            FP num8 = matrix1.M31 * matrix2.M13 + matrix1.M32 * matrix2.M23 + matrix1.M33 * matrix2.M33;
+            // 直接计算结果值，避免临时变量
+            // 第一行计算
+            result.M11 = matrix1.M11 * matrix2.M11 + matrix1.M12 * matrix2.M21 + matrix1.M13 * matrix2.M31;
+            result.M12 = matrix1.M11 * matrix2.M12 + matrix1.M12 * matrix2.M22 + matrix1.M13 * matrix2.M32;
+            result.M13 = matrix1.M11 * matrix2.M13 + matrix1.M12 * matrix2.M23 + matrix1.M13 * matrix2.M33;
 
-            result.M11 = num0;
-            result.M12 = num1;
-            result.M13 = num2;
-            result.M21 = num3;
-            result.M22 = num4;
-            result.M23 = num5;
-            result.M31 = num6;
-            result.M32 = num7;
-            result.M33 = num8;
+            // 第二行计算
+            result.M21 = matrix1.M21 * matrix2.M11 + matrix1.M22 * matrix2.M21 + matrix1.M23 * matrix2.M31;
+            result.M22 = matrix1.M21 * matrix2.M12 + matrix1.M22 * matrix2.M22 + matrix1.M23 * matrix2.M32;
+            result.M23 = matrix1.M21 * matrix2.M13 + matrix1.M22 * matrix2.M23 + matrix1.M23 * matrix2.M33;
+
+            // 第三行计算
+            result.M31 = matrix1.M31 * matrix2.M11 + matrix1.M32 * matrix2.M21 + matrix1.M33 * matrix2.M31;
+            result.M32 = matrix1.M31 * matrix2.M12 + matrix1.M32 * matrix2.M22 + matrix1.M33 * matrix2.M32;
+            result.M33 = matrix1.M31 * matrix2.M13 + matrix1.M32 * matrix2.M23 + matrix1.M33 * matrix2.M33;
         }
         #endregion
 
@@ -503,7 +500,7 @@ namespace RVO.Arithmetic.Optimized
         /// </summary>
         /// <param name="matrix">The matrix which should be transposed.</param>
         /// <returns>The transposed JMatrix.</returns>
-        #region public static JMatrix Transpose(JMatrix matrix)
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         public static TSMatrix Transpose(TSMatrix matrix)
         {
             TSMatrix result;
@@ -516,19 +513,23 @@ namespace RVO.Arithmetic.Optimized
         /// </summary>
         /// <param name="matrix">The matrix which should be transposed.</param>
         /// <param name="result">The transposed JMatrix.</param>
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         public static void Transpose(ref TSMatrix matrix, out TSMatrix result)
         {
+            // 直接赋值转置元素，无需临时变量
+            // 对角线元素保持不变
             result.M11 = matrix.M11;
+            result.M22 = matrix.M22;
+            result.M33 = matrix.M33;
+
+            // 非对角线元素交换
             result.M12 = matrix.M21;
             result.M13 = matrix.M31;
             result.M21 = matrix.M12;
-            result.M22 = matrix.M22;
             result.M23 = matrix.M32;
             result.M31 = matrix.M13;
             result.M32 = matrix.M23;
-            result.M33 = matrix.M33;
         }
-        #endregion
 
         /// <summary>
         /// Multiplies two matrices.
@@ -536,14 +537,13 @@ namespace RVO.Arithmetic.Optimized
         /// <param name="value1">The first matrix.</param>
         /// <param name="value2">The second matrix.</param>
         /// <returns>The product of both values.</returns>
-        #region public static JMatrix operator *(JMatrix value1,JMatrix value2)
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         public static TSMatrix operator *(TSMatrix value1, TSMatrix value2)
         {
-            TSMatrix result; TSMatrix.Multiply(ref value1, ref value2, out result);
+            TSMatrix result;
+            Multiply(ref value1, ref value2, out result);
             return result;
         }
-        #endregion
-
 
         public FP Trace()
         {

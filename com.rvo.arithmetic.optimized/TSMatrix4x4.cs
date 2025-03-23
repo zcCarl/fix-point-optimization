@@ -157,45 +157,47 @@ namespace RVO.Arithmetic.Optimized
         /// </summary>
         /// <param name="matrix1">The first matrix.</param>
         /// <param name="matrix2">The second matrix.</param>
-        /// <returns>The product of both matrices.</returns>
-        public static TSMatrix4x4 Multiply(TSMatrix4x4 matrix1, TSMatrix4x4 matrix2)
-        {
-            TSMatrix4x4 result;
-            TSMatrix4x4.Multiply(ref matrix1, ref matrix2, out result);
-            return result;
-        }
-
-        /// <summary>
-        /// Multiply two matrices. Notice: matrix multiplication is not commutative.
-        /// </summary>
-        /// <param name="matrix1">The first matrix.</param>
-        /// <param name="matrix2">The second matrix.</param>
         /// <param name="result">The product of both matrices.</param>
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         public static void Multiply(ref TSMatrix4x4 matrix1, ref TSMatrix4x4 matrix2, out TSMatrix4x4 result)
         {
-            // First row
-            result.M11 = matrix1.M11 * matrix2.M11 + matrix1.M12 * matrix2.M21 + matrix1.M13 * matrix2.M31 + matrix1.M14 * matrix2.M41;
-            result.M12 = matrix1.M11 * matrix2.M12 + matrix1.M12 * matrix2.M22 + matrix1.M13 * matrix2.M32 + matrix1.M14 * matrix2.M42;
-            result.M13 = matrix1.M11 * matrix2.M13 + matrix1.M12 * matrix2.M23 + matrix1.M13 * matrix2.M33 + matrix1.M14 * matrix2.M43;
-            result.M14 = matrix1.M11 * matrix2.M14 + matrix1.M12 * matrix2.M24 + matrix1.M13 * matrix2.M34 + matrix1.M14 * matrix2.M44;
+            // 优化策略：先计算每一行，提高缓存局部性
 
-            // Second row
-            result.M21 = matrix1.M21 * matrix2.M11 + matrix1.M22 * matrix2.M21 + matrix1.M23 * matrix2.M31 + matrix1.M24 * matrix2.M41;
-            result.M22 = matrix1.M21 * matrix2.M12 + matrix1.M22 * matrix2.M22 + matrix1.M23 * matrix2.M32 + matrix1.M24 * matrix2.M42;
-            result.M23 = matrix1.M21 * matrix2.M13 + matrix1.M22 * matrix2.M23 + matrix1.M23 * matrix2.M33 + matrix1.M24 * matrix2.M43;
-            result.M24 = matrix1.M21 * matrix2.M14 + matrix1.M22 * matrix2.M24 + matrix1.M23 * matrix2.M34 + matrix1.M24 * matrix2.M44;
+            // 缓存第一个矩阵的行，减少重复访问
+            FP m1_11 = matrix1.M11; FP m1_12 = matrix1.M12; FP m1_13 = matrix1.M13; FP m1_14 = matrix1.M14;
+            FP m1_21 = matrix1.M21; FP m1_22 = matrix1.M22; FP m1_23 = matrix1.M23; FP m1_24 = matrix1.M24;
+            FP m1_31 = matrix1.M31; FP m1_32 = matrix1.M32; FP m1_33 = matrix1.M33; FP m1_34 = matrix1.M34;
+            FP m1_41 = matrix1.M41; FP m1_42 = matrix1.M42; FP m1_43 = matrix1.M43; FP m1_44 = matrix1.M44;
 
-            // Third row
-            result.M31 = matrix1.M31 * matrix2.M11 + matrix1.M32 * matrix2.M21 + matrix1.M33 * matrix2.M31 + matrix1.M34 * matrix2.M41;
-            result.M32 = matrix1.M31 * matrix2.M12 + matrix1.M32 * matrix2.M22 + matrix1.M33 * matrix2.M32 + matrix1.M34 * matrix2.M42;
-            result.M33 = matrix1.M31 * matrix2.M13 + matrix1.M32 * matrix2.M23 + matrix1.M33 * matrix2.M33 + matrix1.M34 * matrix2.M43;
-            result.M34 = matrix1.M31 * matrix2.M14 + matrix1.M32 * matrix2.M24 + matrix1.M33 * matrix2.M34 + matrix1.M34 * matrix2.M44;
+            // 缓存第二个矩阵的列，减少重复访问和内存跳转
+            FP m2_11 = matrix2.M11; FP m2_21 = matrix2.M21; FP m2_31 = matrix2.M31; FP m2_41 = matrix2.M41;
+            FP m2_12 = matrix2.M12; FP m2_22 = matrix2.M22; FP m2_32 = matrix2.M32; FP m2_42 = matrix2.M42;
+            FP m2_13 = matrix2.M13; FP m2_23 = matrix2.M23; FP m2_33 = matrix2.M33; FP m2_43 = matrix2.M43;
+            FP m2_14 = matrix2.M14; FP m2_24 = matrix2.M24; FP m2_34 = matrix2.M34; FP m2_44 = matrix2.M44;
 
-            // Fourth row
-            result.M41 = matrix1.M41 * matrix2.M11 + matrix1.M42 * matrix2.M21 + matrix1.M43 * matrix2.M31 + matrix1.M44 * matrix2.M41;
-            result.M42 = matrix1.M41 * matrix2.M12 + matrix1.M42 * matrix2.M22 + matrix1.M43 * matrix2.M32 + matrix1.M44 * matrix2.M42;
-            result.M43 = matrix1.M41 * matrix2.M13 + matrix1.M42 * matrix2.M23 + matrix1.M43 * matrix2.M33 + matrix1.M44 * matrix2.M43;
-            result.M44 = matrix1.M41 * matrix2.M14 + matrix1.M42 * matrix2.M24 + matrix1.M43 * matrix2.M34 + matrix1.M44 * matrix2.M44;
+            // 第一行
+            result.M11 = m1_11 * m2_11 + m1_12 * m2_21 + m1_13 * m2_31 + m1_14 * m2_41;
+            result.M12 = m1_11 * m2_12 + m1_12 * m2_22 + m1_13 * m2_32 + m1_14 * m2_42;
+            result.M13 = m1_11 * m2_13 + m1_12 * m2_23 + m1_13 * m2_33 + m1_14 * m2_43;
+            result.M14 = m1_11 * m2_14 + m1_12 * m2_24 + m1_13 * m2_34 + m1_14 * m2_44;
+
+            // 第二行
+            result.M21 = m1_21 * m2_11 + m1_22 * m2_21 + m1_23 * m2_31 + m1_24 * m2_41;
+            result.M22 = m1_21 * m2_12 + m1_22 * m2_22 + m1_23 * m2_32 + m1_24 * m2_42;
+            result.M23 = m1_21 * m2_13 + m1_22 * m2_23 + m1_23 * m2_33 + m1_24 * m2_43;
+            result.M24 = m1_21 * m2_14 + m1_22 * m2_24 + m1_23 * m2_34 + m1_24 * m2_44;
+
+            // 第三行
+            result.M31 = m1_31 * m2_11 + m1_32 * m2_21 + m1_33 * m2_31 + m1_34 * m2_41;
+            result.M32 = m1_31 * m2_12 + m1_32 * m2_22 + m1_33 * m2_32 + m1_34 * m2_42;
+            result.M33 = m1_31 * m2_13 + m1_32 * m2_23 + m1_33 * m2_33 + m1_34 * m2_43;
+            result.M34 = m1_31 * m2_14 + m1_32 * m2_24 + m1_33 * m2_34 + m1_34 * m2_44;
+
+            // 第四行
+            result.M41 = m1_41 * m2_11 + m1_42 * m2_21 + m1_43 * m2_31 + m1_44 * m2_41;
+            result.M42 = m1_41 * m2_12 + m1_42 * m2_22 + m1_43 * m2_32 + m1_44 * m2_42;
+            result.M43 = m1_41 * m2_13 + m1_42 * m2_23 + m1_43 * m2_33 + m1_44 * m2_43;
+            result.M44 = m1_41 * m2_14 + m1_42 * m2_24 + m1_43 * m2_34 + m1_44 * m2_44;
         }
 
         /// <summary>
@@ -554,20 +556,23 @@ namespace RVO.Arithmetic.Optimized
 
             // Calculate 3x3 matrix from orthonormal basis
             result.M11 = FP.One - (yy + zz);
-            result.M21 = xy + wz;
-            result.M31 = xz - wy;
-            result.M41 = FP.Zero;
             result.M12 = xy - wz;
-            result.M22 = FP.One - (xx + zz);
-            result.M32 = yz + wx;
-            result.M42 = FP.Zero;
             result.M13 = xz + wy;
-            result.M23 = yz - wx;
-            result.M33 = FP.One - (xx + yy);
-            result.M43 = FP.Zero;
             result.M14 = FP.Zero;
+
+            result.M21 = xy + wz;
+            result.M22 = FP.One - (xx + zz);
+            result.M23 = yz - wx;
             result.M24 = FP.Zero;
+
+            result.M31 = xz - wy;
+            result.M32 = yz + wx;
+            result.M33 = FP.One - (xx + yy);
             result.M34 = FP.Zero;
+
+            result.M41 = FP.Zero;
+            result.M42 = FP.Zero;
+            result.M43 = FP.Zero;
             result.M44 = FP.One;
         }
 
@@ -576,6 +581,7 @@ namespace RVO.Arithmetic.Optimized
         /// </summary>
         /// <param name="matrix">The matrix which should be transposed.</param>
         /// <returns>The transposed JMatrix.</returns>
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         public static TSMatrix4x4 Transpose(TSMatrix4x4 matrix)
         {
             TSMatrix4x4 result;
@@ -587,27 +593,33 @@ namespace RVO.Arithmetic.Optimized
         /// Creates the transposed matrix.
         /// </summary>
         /// <param name="matrix">The matrix which should be transposed.</param>
-        /// <param name="result">The transposed JMatrix.</param>
+        /// <param name="result">The transposed matrix.</param>
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         public static void Transpose(ref TSMatrix4x4 matrix, out TSMatrix4x4 result)
         {
+            // 对角线元素保持不变
             result.M11 = matrix.M11;
+            result.M22 = matrix.M22;
+            result.M33 = matrix.M33;
+            result.M44 = matrix.M44;
+
+            // 交换非对角线元素
             result.M12 = matrix.M21;
             result.M13 = matrix.M31;
             result.M14 = matrix.M41;
+
             result.M21 = matrix.M12;
-            result.M22 = matrix.M22;
             result.M23 = matrix.M32;
             result.M24 = matrix.M42;
+
             result.M31 = matrix.M13;
             result.M32 = matrix.M23;
-            result.M33 = matrix.M33;
             result.M34 = matrix.M43;
+
             result.M41 = matrix.M14;
             result.M42 = matrix.M24;
             result.M43 = matrix.M34;
-            result.M44 = matrix.M44;
         }
-
 
         /// <summary>
         /// Multiplies two matrices.
@@ -615,13 +627,13 @@ namespace RVO.Arithmetic.Optimized
         /// <param name="value1">The first matrix.</param>
         /// <param name="value2">The second matrix.</param>
         /// <returns>The product of both values.</returns>
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         public static TSMatrix4x4 operator *(TSMatrix4x4 value1, TSMatrix4x4 value2)
         {
             TSMatrix4x4 result;
-            TSMatrix4x4.Multiply(ref value1, ref value2, out result);
+            Multiply(ref value1, ref value2, out result);
             return result;
         }
-
 
         public FP Trace()
         {

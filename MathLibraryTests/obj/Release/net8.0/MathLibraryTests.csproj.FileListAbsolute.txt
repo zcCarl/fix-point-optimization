@@ -171,3 +171,4 @@
 /Users/quanchao/RVO/MathLibraryTests/obj/Release/net8.0/MathLibraryTests.pdb
 /Users/quanchao/RVO/MathLibraryTests/obj/Release/net8.0/MathLibraryTests.genruntimeconfig.cache
 /Users/quanchao/RVO/MathLibraryTests/obj/Release/net8.0/ref/MathLibraryTests.dll
+/Users/quanchao/RVO/MathLibraryTests/obj/Release/net8.0/MathLibraryTests.sourcelink.json

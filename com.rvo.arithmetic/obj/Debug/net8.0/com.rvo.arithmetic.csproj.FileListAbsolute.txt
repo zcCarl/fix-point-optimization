@@ -9,3 +9,4 @@
 /Users/quanchao/RVO/com.rvo.arithmetic/obj/Debug/net8.0/refint/com.rvo.arithmetic.dll
 /Users/quanchao/RVO/com.rvo.arithmetic/obj/Debug/net8.0/com.rvo.arithmetic.pdb
 /Users/quanchao/RVO/com.rvo.arithmetic/obj/Debug/net8.0/ref/com.rvo.arithmetic.dll
+/Users/quanchao/RVO/com.rvo.arithmetic/obj/Debug/net8.0/com.rvo.arithmetic.sourcelink.json

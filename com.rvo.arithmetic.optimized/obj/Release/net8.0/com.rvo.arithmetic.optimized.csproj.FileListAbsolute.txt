@@ -9,3 +9,4 @@
 /Users/quanchao/RVO/com.rvo.arithmetic.optimized/obj/Release/net8.0/refint/com.rvo.arithmetic.optimized.dll
 /Users/quanchao/RVO/com.rvo.arithmetic.optimized/obj/Release/net8.0/com.rvo.arithmetic.optimized.pdb
 /Users/quanchao/RVO/com.rvo.arithmetic.optimized/obj/Release/net8.0/ref/com.rvo.arithmetic.optimized.dll
+/Users/quanchao/RVO/com.rvo.arithmetic.optimized/obj/Release/net8.0/com.rvo.arithmetic.optimized.sourcelink.json
